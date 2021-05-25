@@ -1,0 +1,82 @@
+@import '../../../../shared/styles/base';
+
+.form {
+    max-width: 350px;
+    max-height: 480px;
+    background-color: $header-bg-color;
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    padding: 40px;
+
+    &Input {
+        display: inline-block;
+        width: 320px;
+        max-height: 42px;
+        background-color: #F6F7FB;
+        box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.15);
+        border: none;
+        margin-bottom: 23px;
+        padding: 12px 10px;
+    }
+
+    &Text {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.25;
+        letter-spacing: 0.04em;
+        color: $primary-text-color;
+        margin-bottom: 20px;
+    }
+
+    &Label {
+        display: block;
+        color: $primary-text-color;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.25;
+        letter-spacing: 0.04em;
+        margin-bottom: 10px;
+    }
+}
+
+.authButton {
+    color: $white-text-color;
+    background-color: $accent-bg-color;
+    width: 155px;
+    height: 48px;
+    border: none;
+    margin-right: 12px;
+    border-radius: 6px;
+
+  
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+}
+
+.googleButton {
+    @include flex(center, center);
+    width: 150px;
+    height: 42px;
+    padding: 11px 32px;
+    background-color: #F6F7FB;
+    border-radius: 6px;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.15));
+    border: none;
+    cursor: pointer;
+}
+
+.googleText {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.21;
+    letter-spacing: 0.02em;
+    color: $accent-color;
+    margin-left: 10px;
+}
+
+.asterics {
+    color: #EB5757;
+}
+

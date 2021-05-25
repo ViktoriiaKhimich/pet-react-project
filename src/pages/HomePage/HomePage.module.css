@@ -1,0 +1,8 @@
+.scale {
+    display: inline-block;
+    width: 280px;
+    height: 6px;
+    border-radius: 10px;
+    /* background-color: #E0E0E0; */
+    background: linear-gradient(.75turn, #E0E0E0 50%, #9ECB44 50%)
+}

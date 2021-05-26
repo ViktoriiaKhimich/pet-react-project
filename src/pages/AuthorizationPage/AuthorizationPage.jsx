@@ -1,17 +1,22 @@
 import React from 'react'
 import AuthForm from '../../client/authorization/components/AuthForm'
-import TasksList from '../../client/tasks/components/TasksList'
+import Portfolio from '../../client/authorization/components/Portfolio'
 
 import styles from './AuthorizationPage.module.scss'
 
 
 const AuthorizationPage = () => {
-    return (<>
-        <div className={styles.authContainer}>
-            <h1 className={styles.heroTitle}>Выполняй задания, получи классные призы!</h1>
-            <AuthForm />
+    return (
+        <div className={styles.heroContainer}>
+            <div className={styles.porfolio}>
+                <Portfolio />
+            </div>
+            <div className={styles.authContainer}>
+                <h1 className={styles.heroTitle}>Achieve goals, get awesome rewards!</h1>
+                <AuthForm />
+            </div>
         </div>
-    </>);
+    );
 }
 
 export default AuthorizationPage;

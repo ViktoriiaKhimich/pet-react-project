@@ -1,0 +1,40 @@
+@import '../../../../shared/styles/base';
+
+.card {
+   max-width: 280px;
+   min-height: 370px;
+   box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.1);
+   border-radius: 6px;
+   background-color: $header-bg-color;
+}
+
+.memberDesc {
+    padding: 20px;
+}
+
+.name {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.25;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    color: $accent-color;
+}
+
+.position {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 1.22;
+    letter-spacing: 0.04em;
+    color: $primary-text-color;
+    margin-bottom: 6px;
+}
+
+.description {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.04em;
+    color: $accent-color;
+}

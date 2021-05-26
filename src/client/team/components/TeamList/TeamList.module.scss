@@ -1,0 +1,7 @@
+@import '../../../../shared/styles/base';
+
+.teamList {
+    @include grid(280px, auto-fit);
+    column-gap: 20px;
+    row-gap: 40px;
+}

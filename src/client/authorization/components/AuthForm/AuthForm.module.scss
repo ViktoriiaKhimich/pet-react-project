@@ -20,9 +20,9 @@
     }
 
     &Text {
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 1.25;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 1.33;
         letter-spacing: 0.04em;
         color: $primary-text-color;
         margin-bottom: 20px;
@@ -31,7 +31,7 @@
     &Label {
         display: block;
         color: $primary-text-color;
-        font-weight: 400;
+        font-weight: 500;
         font-size: 12px;
         line-height: 1.25;
         letter-spacing: 0.04em;
@@ -49,9 +49,9 @@
     border-radius: 6px;
 
   
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.25;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.33;
     letter-spacing: 0.02em;
 }
 

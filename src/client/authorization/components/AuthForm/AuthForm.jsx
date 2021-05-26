@@ -32,12 +32,12 @@ const AuthForm = () => {
 
     return (
         <form className={styles.form} onSubmit={handleSubmit} >
-            <p className={styles.formText}>Вы можете авторизоваться с помощью Google Account:</p>
+            <p className={styles.formText}>Log in with your Google Account:</p>
             <Button className={styles.googleButton}><Google /><span className={styles.googleText}>Google</span></Button>
-            <p className={styles.formText}>Или зайти с помощью e-mail и пароля, предварительно зарегистрировавшись:</p>
+            <p className={styles.formText}>Log in or register with your e-mail and password:</p>
             <label className={styles.formLabel} htmlFor="email"><span className={styles.asterics}>*</span>E-mail:</label>
             <Input className={styles.formInput} value={formData.email} onChange={handleChange} {...fields.email} />
-            <label className={styles.formLabel} htmlFor="password"><span className={styles.asterics}>*</span>Пароль:</label>
+            <label className={styles.formLabel} htmlFor="password"><span className={styles.asterics}>*</span>Password:</label>
             <Input className={styles.formInput} value={formData.password} onChange={handleChange} {...fields.password} />
             <Button className={styles.authButton} >Log in</Button>
             <Button className={styles.authButton}>Sign in</Button>

@@ -1,0 +1,23 @@
+@import '../../../../shared/styles/base';
+
+.link{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.25;
+    text-align: right;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    margin-right: 15px;
+    color: $primary-text-color;
+  
+    
+    &:not(:last-child) {
+        border-right: 1px solid #858598;
+        padding-right: 15px;
+    }
+}
+
+.activeLink {
+     @extend .link;
+      color: $accent-color;
+}

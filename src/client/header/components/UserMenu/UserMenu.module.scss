@@ -1,0 +1,39 @@
+@import '../../../../shared/styles/base';
+
+.score {
+    @include flex(center, center);
+    padding-right: 380px;
+}
+.desc {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.25;
+    letter-spacing: 0.04em;
+    color: #A6ABB9;
+    margin-right: 10px;
+}
+
+.points {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.21;
+    letter-spacing: 0.04em;
+    color: $accent-color;
+}
+
+.user {
+    @include flex(center, center);
+    margin-right: 15px;
+
+}
+
+.email {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.25;
+    letter-spacing: 0.04em;
+    color: #858598;
+    border-right: 1px solid #858598;
+    margin-right: 15px;
+    padding-right: 15px;
+}

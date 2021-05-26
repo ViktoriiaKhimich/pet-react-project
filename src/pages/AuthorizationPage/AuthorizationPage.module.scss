@@ -1,9 +1,23 @@
 @import '../../shared/styles/base';
 
-.heroTitle {
-    font-weight: 600;
-    font-size: 30px;
-    line-height: 1.23;
-    color: $accent-color;
-    margin-bottom: 32px;
+.heroContainer {
+    padding: 21px 130px 21px 50px;
 }
+
+.heroTitle {
+        display: inline-block;
+        width: 400px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 1.23;
+        color: $accent-color;
+        margin-bottom: 32px;
+    }
+
+.authContainer {
+    position: absolute;
+    left: 800px;
+    top: 134px;
+}
+

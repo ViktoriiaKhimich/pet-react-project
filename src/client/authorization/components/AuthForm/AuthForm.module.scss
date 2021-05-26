@@ -1,7 +1,7 @@
 @import '../../../../shared/styles/base';
 
 .form {
-    max-width: 350px;
+    width: 420px;
     max-height: 480px;
     background-color: $header-bg-color;
     box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.1);
@@ -65,6 +65,7 @@
     filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.15));
     border: none;
     cursor: pointer;
+    margin-bottom: 30px;
 }
 
 .googleText {

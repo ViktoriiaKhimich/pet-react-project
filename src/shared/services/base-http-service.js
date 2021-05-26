@@ -5,23 +5,29 @@ class BaseHttpService {
 
     accessToken = null;
 
-    get(endpoint = '', options = {}) {
+    async get(endpoint = '', options = {}) {
         Object.assign(options, this.getCommonOptions());
-        return axios
-            .get(`${this.BASE_URL}/${endpoint}`, options)
-            .then(({ data }) => data)
-            .catch((error) => this.handleError(error))
+        try {
+            const { data } = axios.get(`${this.BASE_URL}/${endpoint}`, options)
+            return data;
+        }
+        catch (error) {
+            this.handleError(error)
+        }
     }
 
-    post(endpoint = '', options = {}, body) {
+    async post(endpoint = '', body, options = {}) {
         Object.assign(options, this.getCommonOptions());
-        return axios
-            .post(`${this.BASE_URL}/${endpoint}`, body, options)
-            .then(({ data }) => data)
-            .catch((error) => this.handleError(error))
+        try {
+            const { data } = await axios.post(`${this.BASE_URL}/${endpoint}`, body, options)
+            return data;
+        }
+        catch (error) {
+            this.handleError(error)
+        }
     }
 
-    patch(endpoint = '', options = {}, body) {
+    patch(endpoint = '', body, options = {}) {
         Object.assign(options, this.getCommonOptions());
         return axios
             .patch(`${this.BASE_URL}/${endpoint}`, body, options)
@@ -44,7 +50,7 @@ class BaseHttpService {
     }
 
     getCommonOptions() {
-        const { accessToken } = this.loadToken();
+        const { accessToken } = this;
         return {
             headers: {
                 Authorization: `Bearer ${accessToken}`
@@ -52,15 +58,11 @@ class BaseHttpService {
         }
     }
 
-    get accessToken() {
-        return (this.accessToken || this.loadToken())
-    }
 
-    saveToken(data) {
-        const { accessToken } = data;
-        this.accessToken = accessToken;
-        localStorage.setItem('accessToken', accessToken)
-        return accessToken;
+    saveToken(token) {
+        this.accessToken = token;
+        localStorage.setItem('accessToken', token)
+        return token;
     }
 
     loadToken() {
@@ -71,6 +73,7 @@ class BaseHttpService {
 
     removeToken() {
         localStorage.removeItem('accessToken')
+        this.accessToken = null;
     }
 }
 

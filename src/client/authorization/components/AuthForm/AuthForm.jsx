@@ -22,7 +22,7 @@ const AuthForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(operations.register(formData));
+        dispatch(operations.login(formData));
         reset()
     }
 
@@ -39,7 +39,7 @@ const AuthForm = () => {
             <Input className={styles.formInput} value={formData.email} onChange={handleChange} {...fields.email} />
             <label className={styles.formLabel} htmlFor="password"><span className={styles.asterics}>*</span>Пароль:</label>
             <Input className={styles.formInput} value={formData.password} onChange={handleChange} {...fields.password} />
-            <Button className={styles.authButton}>Log in</Button>
+            <Button className={styles.authButton} >Log in</Button>
             <Button className={styles.authButton}>Sign in</Button>
         </form>
 

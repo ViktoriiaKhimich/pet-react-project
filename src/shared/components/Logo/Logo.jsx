@@ -1,7 +1,7 @@
 import React from 'react'
 import { ReactComponent as LogoIcon } from './logo.svg'
 
-import styles from './Logo.module.css'
+import styles from './Logo.module.scss'
 
 const Logo = () => {
     return (

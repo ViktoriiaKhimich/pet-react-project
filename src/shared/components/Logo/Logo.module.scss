@@ -1,0 +1,18 @@
+@import '../../../shared/styles/base';
+@import '../../styles/style.scss';
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+    &Text {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 1.25;
+        letter-spacing: 0.08em;
+        margin-right: 7px;
+        
+    }
+}
+

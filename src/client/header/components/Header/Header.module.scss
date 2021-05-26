@@ -1,0 +1,9 @@
+@import '../../../../shared//styles/base.scss';
+
+.header {
+    @include flex(space-between,center);
+    height: 62px;
+    padding: 21px 50px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    background-color: $header-bg-color;
+}

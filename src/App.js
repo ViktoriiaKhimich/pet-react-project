@@ -6,8 +6,8 @@ import ContactsPage from './pages/ContactsPage'
 import AuthorizationPage from './pages/AuthorizationPage'
 import HomePage from './pages/HomePage'
 
-
 function App() {
+
   return (
     <>
       <Header />

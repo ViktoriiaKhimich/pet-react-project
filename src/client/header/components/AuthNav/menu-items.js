@@ -8,5 +8,10 @@ export const menuItems = [
         id: '2',
         to: '/contacts',
         text: 'Contacts'
+    },
+    {
+        id: '3',
+        to: '/',
+        text: 'Main'
     }
 ]

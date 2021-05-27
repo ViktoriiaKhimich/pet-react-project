@@ -1,76 +1,37 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import selectors from '../../redux/tasks/selectors'
-
-// import { useSelector, shallowEqual, useDispatch } from 'react-redux'
-import TasksList from '../../client/tasks/components/TasksList'
-// import operations from '../../redux/tasks/operations'
-
-const tasks = [
-    {
-        "_id": "60abb90f94ff3f6e84cb1936",
-        "date": "2021-05-24",
-        "isCompleted": true,
-        "title": "Застелить постель",
-        "reward": 3,
-        "imageUrl": "https://storage.googleapis.com/kidslikev2_bucket/Rectangle%2025.png",
-    },
-    {
-        "_id": "60abb90f94fff6e84cb1936",
-        "date": "2021-05-24",
-        "isCompleted": false,
-        "title": "Застелить постель",
-        "reward": 3,
-        "imageUrl": "https://storage.googleapis.com/kidslikev2_bucket/Rectangle%2025.png",
-    },
-    {
-        "_id": "60abb0f94ff3f6e84cb1936",
-        "title": "Застелить постель",
-        "date": "2021-05-24",
-        "isCompleted": true,
-        "reward": 3,
-        "imageUrl": "https://storage.googleapis.com/kidslikev2_bucket/Rectangle%2025.png",
-    },
-    {
-        "_id": "60abb90f94ff3f6e84cb136",
-        "date": "2021-05-24",
-        "title": "Застелить постель",
-        "isCompleted": false,
-        "reward": 3,
-        "imageUrl": "https://storage.googleapis.com/kidslikev2_bucket/Rectangle%2025.png",
-    },
-    {
-        "_id": "60abb9f94ff3f6e84cb1936",
-        "title": "Застелить постель",
-        "date": "2021-05-24",
-        "isCompleted": true,
-        "reward": 3,
-        "imageUrl": "https://storage.googleapis.com/kidslikev2_bucket/Rectangle%2025.png",
-    },
-    {
-        "_id": "6abb90f94ff3f6e84cb1936",
-        "title": "Застелить постель",
-        "date": "2021-05-24",
-        "isCompleted": false,
-        "reward": 3,
-        "imageUrl": "https://storage.googleapis.com/kidslikev2_bucket/Rectangle%2025.png",
-    },
-]
-
+import pic from './heroImage.png';
+import Button from '../../shared/components/Button'
+import styles from './HomePage.module.scss'
 
 const HomePage = () => {
+    console.log(pic);
 
-    return (
-        <>
-            <TasksList tasks={tasks} />
-        </>
-    );
+    const bgImage = pic;
+    console.log(bgImage);
+    return (<>
+        <div className={styles.heroContainer}>
+            <div className={styles.weekInfo}>
+                <div>
+                    <h2 className={styles.week}>Week: 24-30, May</h2>
+                    <p className={styles.days}><span className={styles.tasks}>My tasks:</span> Thursday 27-05-2021</p>
+                </div>
+                <div className={styles.stats}>
+                    <p className={styles.points}>Gained points for this week: 0</p>
+                    <p className={styles.points}>Planned points for this week: 0</p>
+                    <div className={styles.bar}>
+                        <p className={styles.total}>0 / 0</p>
+                        <span className={styles.scale}></span>
+                    </div>
+                </div>
+            </div>
+            <h3 className={styles.title}>No tasks for this week</h3>
+            <Button className={styles.btn}>Plan tasks</Button>
+            <div className={styles.bgImage}>
+                <img src={bgImage} alt="" />
+            </div>
+        </div>
+
+    </>);
 }
 
-const mapStateToProps = (state) => ({
-    tasks: selectors.getTasks(state)
-})
-
-
-
-export default connect(mapStateToProps)(HomePage);
+export default HomePage;

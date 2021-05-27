@@ -2,7 +2,7 @@ export const menuItems = [
     {
         id: '1',
         to: '/tasks',
-        text: 'Main'
+        text: 'Tasks'
     },
     {
         id: '2',

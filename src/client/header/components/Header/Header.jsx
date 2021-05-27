@@ -14,7 +14,7 @@ const Header = () => {
         <div className={styles.header}>
             <Logo />
             {isLogined ? <UserMenu /> : <AuthNav />}
-            {isLogined && <Redirect to='/tasks' />}
+            {/* {isLogined && <Redirect to='/tasks' />} */}
 
         </div>);
 }

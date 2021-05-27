@@ -1,0 +1,98 @@
+@import '../../shared/styles/base';
+
+.heroContainer {
+    padding: 50px 50px 100px 40px;
+}
+
+.weekInfo {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 110px;
+    padding-right: 53px;
+}
+
+.week {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.22;
+    letter-spacing: 0.04em;
+    color: $accent-color;
+    margin-bottom: 30px;
+}
+
+.tasks {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.22;
+    letter-spacing: 0.04em;
+    color: #A6ABB9;
+}
+
+.days {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.22;
+    letter-spacing: 0.2em;
+    color: $accent-color;
+    margin-bottom: 94px;
+}
+
+.points {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.22;
+    letter-spacing: 0.04em;
+    color: #A6ABB9;
+    margin-bottom: 10px;
+    text-align: end;
+}
+
+.bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.total {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.21;
+    letter-spacing: 0.2em;
+    color: $accent-color;
+    margin-right: 19px;
+}
+
+.scale {
+    display: inline-block;
+    width: 280px;
+    height: 6px;
+    background: #E0E0E0;
+    border-radius: 10px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1.22;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: $accent-color;
+    margin-bottom: 20px;
+}
+
+.btn {
+    width: 220px;
+    height: 48px;
+    background-color: #FFBC33;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 40px;
+    text-align: center;
+
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.22;
+    letter-spacing: 0.02em;
+    color: #FAFAFA;
+}

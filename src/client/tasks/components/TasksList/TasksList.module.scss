@@ -1,0 +1,8 @@
+@import '../../../../shared/styles/base';
+
+.list {
+    display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    @include grid(280px, auto-fit);
+    grid-gap: 20px;
+}

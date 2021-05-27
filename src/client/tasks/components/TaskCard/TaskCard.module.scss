@@ -1,36 +1,29 @@
-.taskItem {
+@import '../../../../shared/styles/base';
+
+.item {
     border-radius: 6px 6px 0px 0px;
     filter: drop-shadow(4px 6px 15px rgba(0, 0, 0, 0.1));
+    max-width: 280px;
 }
 
-
-.taskTitle {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: bold;
+.title {
+    font-weight: 700;
     font-size: 12px;
     line-height: 1.25;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: #000000;
+    color: $accent-color;
+    margin-bottom: 4px;
 }
 
-.taskDescription {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #FFBC33;
+.description {
+    @include flex( space-between, center);
+    background-color: $accent-bg-color;
     border-radius: 0px 0px 6px 6px;
     padding: 14px 20px 17px 20px ;
-    
 }
 
-
-
-.taskScore {
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
+.score {
     font-weight: 500;
     font-size: 10px;
     line-height: 1.2;
@@ -39,13 +32,10 @@
     text-transform: uppercase;
     color: #FFFFFF;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 78px;
+    @include flex(center, center);
+    width: 75px;
     height: 18px;
     background-color: #5679D7;
     border-radius: 3px;
     padding: 3px 10px;
-
 }

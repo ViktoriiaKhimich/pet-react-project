@@ -2,12 +2,12 @@ import { combineReducers } from 'redux'
 import { createReducer } from '@reduxjs/toolkit';
 import actions from './actions'
 
-const tasks = createReducer([], {
-    [actions.fetchTasksSuccess]: ((_, { payload }) => payload)
+const allTasks = createReducer([], {
+    [actions.fetchTasksSuccess]: (_, { payload }) => payload.week.tasks
 })
 
 const error = createReducer(null, {
-    [actions.fetchTasksError]: ((_, { payload }) => payload)
+    [actions.fetchTasksError]: (_, { payload }) => payload,
 })
 
 const loading = createReducer(false, {
@@ -15,7 +15,7 @@ const loading = createReducer(false, {
 })
 
 export default combineReducers({
-    tasks,
+    allTasks,
     error,
     loading,
 })

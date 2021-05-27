@@ -46,7 +46,8 @@ const tokenStorage = {
         localStorage.removeItem('token')
     },
     get() {
-        localStorage.getItem('token')
+        const token = localStorage.getItem('token')
+        return token
     }
 }
 
@@ -74,7 +75,7 @@ const login = body => async dispatch => {
     }
 }
 
-const logout = () => async dispatch => {
+export const logout = () => async dispatch => {
     dispatch(logoutRequest())
     try {
         await axios.post('/auth/logout')
@@ -87,9 +88,14 @@ const logout = () => async dispatch => {
     }
 }
 
-const getCurrentUser = () => async dispatch => {
-    const token = tokenStorage.get()
-    token.set(token)
+export const getCurrentUser = () => async dispatch => {
+    const storedToken = tokenStorage.get()
+
+    if (!storedToken) {
+        return;
+    }
+
+    token.set(storedToken)
     dispatch(getCurrentUserRequest())
     try {
         const { data } = await axios.get('/user/info')
@@ -100,4 +106,4 @@ const getCurrentUser = () => async dispatch => {
     }
 }
 
-export default { register, login, logout }
+export default { register, login, logout, getCurrentUser }

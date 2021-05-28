@@ -11,7 +11,6 @@ const TaskCard = ({ title, reward, imageUrl, data, isCompleted, toggleCompleted 
 
 
     const date = data.map(data => data)
-    console.log(date);
     const today = moment().format('YYYY-MM-DD');
     const expiredDate = today > date;
     const exactDate = today === date;

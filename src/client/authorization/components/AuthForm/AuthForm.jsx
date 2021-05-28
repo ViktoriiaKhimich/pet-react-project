@@ -12,8 +12,9 @@ import styles from './AuthForm.module.scss'
 const AuthForm = () => {
 
     const [formData, setFormData] = useState(initialState);
-    const dispatch = useDispatch();
+    const [btnType, setBtnType] = useState('');
 
+    const dispatch = useDispatch();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -22,7 +23,17 @@ const AuthForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(operations.login(formData));
+
+        switch (btnType) {
+            case 'login':
+                dispatch(operations.login(formData));
+                break;
+            case 'register':
+                dispatch(operations.register(formData));
+                break;
+            default:
+                return;
+        }
         reset()
     }
 
@@ -39,8 +50,8 @@ const AuthForm = () => {
             <Input className={styles.formInput} value={formData.email} onChange={handleChange} {...fields.email} />
             <label className={styles.formLabel} htmlFor="password"><span className={styles.asterics}>*</span>Password:</label>
             <Input className={styles.formInput} value={formData.password} onChange={handleChange} {...fields.password} />
-            <Button className={styles.authButton} >Log in</Button>
-            <Button className={styles.authButton}>Sign in</Button>
+            <Button type="submit" className={styles.authButton} onClick={() => setBtnType('login')}>Log in</Button>
+            <Button type="submit" className={styles.authButton} onClick={() => setBtnType('register')} >Sign in</Button>
         </form>
 
     );

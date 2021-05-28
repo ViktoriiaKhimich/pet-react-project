@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector, shallowEqual } from 'react-redux'
 import selectors from '../../redux/tasks/selectors'
 
-// import { useSelector, shallowEqual, useDispatch } from 'react-redux'
 import TasksList from '../../client/tasks/components/TasksList'
 import { fetchTasks } from '../../redux/tasks/operations'
 
@@ -60,7 +59,7 @@ import { fetchTasks } from '../../redux/tasks/operations'
 
 const TasksPage = () => {
 
-    const tasks = useSelector(state => state.tasks.allTasks);
+    const tasks = useSelector(state => state.tasks.allTasks, shallowEqual);
     const days = tasks.flatMap(item => item.days)
     const dates = days.map(item => item.date).splice(0, 7)
 

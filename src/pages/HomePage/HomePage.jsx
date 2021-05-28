@@ -4,11 +4,11 @@ import Button from '../../shared/components/Button'
 import styles from './HomePage.module.scss'
 
 const HomePage = () => {
-    console.log(pic);
 
     const bgImage = pic;
-    console.log(bgImage);
+
     return (<>
+
         <div className={styles.heroContainer}>
             <div className={styles.weekInfo}>
                 <div>
@@ -24,13 +24,15 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
-            <h3 className={styles.title}>No tasks for this week</h3>
-            <Button className={styles.btn}>Plan tasks</Button>
-            <div className={styles.bgImage}>
-                <img src={bgImage} alt="" />
+            <div>
+                <h3 className={styles.title}>No tasks for this week</h3>
+                <Button className={styles.btn}>Plan tasks</Button>
+
+                <div className={styles.bgImage}>
+                    <img src={bgImage} alt="" />
+                </div>
             </div>
         </div>
-
     </>);
 }
 

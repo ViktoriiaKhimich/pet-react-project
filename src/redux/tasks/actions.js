@@ -4,8 +4,6 @@ export const fetchTasksRequest = createAction('tasks/fetchTasksRequest');
 export const fetchTasksSuccess = createAction('tasks/fetchTasksSuccess');
 export const fetchTasksError = createAction('tasks/fetchTasksError');
 
-
-
 export default {
     fetchTasksRequest,
     fetchTasksSuccess,

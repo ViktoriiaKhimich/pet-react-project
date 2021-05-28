@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 
-const Button = ({ className, children }) => {
-    return <button className={className} type='submit'>{children}</button>;
+const Button = ({ className, children, ...props }) => {
+    return <button className={className} {...props}>{children}</button>;
 }
 
 Button.defaultProps = {

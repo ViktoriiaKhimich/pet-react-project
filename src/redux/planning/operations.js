@@ -1,6 +1,6 @@
 // import PlansHttpService from './service';
 import axios from 'axios'
-import { fetchTasksToPlanRequest, fetchTasksToPlanSuccess, fetchTasksToPlanError } from './actions'
+import { fetchTasksToPlanRequest, fetchTasksToPlanSuccess, fetchTasksToPlanError, createNewTaskRequest, createNewTaskSuccess, createNewTaskError } from './actions'
 
 // const service = new PlansHttpService();
 axios.defaults.baseURL = 'https://kidslike-v1-backend.goit.global';
@@ -16,6 +16,16 @@ export const fetchPlans = () => async dispatch => {
     }
 }
 
+export const createNewTask = (body) => async dispatch => {
+    dispatch(createNewTaskRequest())
+    try {
+        const { data } = await axios.post('/task', body)
+        dispatch(createNewTaskSuccess(data))
+    } catch (error) {
+        dispatch(createNewTaskError(error))
+    }
+}
+
 export default {
-    fetchPlans
+    fetchPlans, createNewTask,
 }

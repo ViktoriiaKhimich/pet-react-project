@@ -1,0 +1,18 @@
+@import '../../../../shared/styles/base';
+
+.week {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.22;
+    letter-spacing: 0.04em;
+    color: $accent-color;
+    margin-right: 100px;
+}
+
+.currentWeek {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.22;
+    letter-spacing: 0.2em;
+    margin-left: 10px;
+}

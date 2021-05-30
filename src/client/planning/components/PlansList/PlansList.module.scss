@@ -1,0 +1,6 @@
+@import '../../../../shared/styles/base';
+
+.plansList {
+    @include grid(280px, auto-fit);
+    grid-gap: 20px;
+}

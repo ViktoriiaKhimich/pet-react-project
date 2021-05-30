@@ -5,8 +5,8 @@ import TaskCard from '../TaskCard'
 
 import styles from './TasksList.module.scss'
 
-const TasksList = ({ tasks, date, onClick }) => {
-    const tasksElements = tasks.map(({ _id, ...props }) => <TaskCard key={_id} data={date} {...props} onClick={() => onClick(_id)}></TaskCard>)
+const TasksList = ({ tasks, onClick }) => {
+    const tasksElements = tasks.map(({ _id, ...props }) => <TaskCard key={_id} {...props} onClick={() => onClick(_id)}></TaskCard>)
     return (
         <ul className={styles.list}>{tasksElements}</ul>
     )

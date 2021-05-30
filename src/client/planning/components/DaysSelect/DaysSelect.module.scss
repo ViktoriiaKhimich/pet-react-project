@@ -1,0 +1,28 @@
+@import '../../../../shared/styles/base';
+
+.group {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 25px;
+    width: 114px;
+    min-height: 208px;
+    filter: drop-shadow(4px 6px 15px rgba(0, 0, 0, 0.1));
+    background-color: #3E7ADC;
+    border-radius: 6px;
+}
+
+.label {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.22;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+}
+
+.box {
+    border: 1px solid #FFFFFF;
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+}

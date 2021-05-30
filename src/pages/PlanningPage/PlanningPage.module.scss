@@ -12,49 +12,6 @@
 .mainInfo {
     @include flex(space-between, center)
 }
-// .text {
-//     font-weight: 500;
-//     font-size: 12px;
-//     line-height: 1.22;
-//     letter-spacing: 0.04em;
-//     color: #A6ABB9;
-// }
 
-.week {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.22;
-    letter-spacing: 0.04em;
-    color: $accent-color;
-    margin-right: 100px;
-}
 
-.score {
-    @include flex(center, center);
-    width: 30px;
-    height: 30px;
-    background-color: #8EC63F;
 
-    border-radius: 50%;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.22;
-    letter-spacing: 0.04em;
-    color: #FFFFFF;
-}
-
-.newTask {
-    @include flex(center, center);
-}
-
-.plus {
-    margin-left: 20px;
-}
-
-.currentWeek {
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 1.22;
-    letter-spacing: 0.2em;
-    margin-left: 10px;
-}

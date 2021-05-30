@@ -1,34 +1,37 @@
-import React, { useEffect } from 'react'
-import moment from 'moment'
-import { useSelector, useDispatch } from 'react-redux'
-import styles from './PlanningPage.module.scss'
-import { ReactComponent as Plus } from './plus.svg'
+import React, { useEffect, useState } from 'react'
+import { useSelector, useDispatch, shallowEqual } from 'react-redux'
 import operations from '../../redux/planning/operations'
 
 import PlansList from '../../client/planning/components/PlansList'
+import CreateTaskForm from '../../client/planning/components/CreateTaskForm'
+import CurrentWeek from '../../client/planning/components/CurrentWeek'
+import WeekPoints from '../../client/planning/components/WeekPoints'
+import Planning from '../../client/planning/components/Planning'
+
+import styles from './PlanningPage.module.scss'
 
 const PlanningPage = () => {
-
-    const startOfWeek = moment().startOf('isoweek').format('DD-MM-YYYY').slice(0, 2);
-    const endOfWeek = moment().endOf('isoweek').format('DD-MM-YYYY');
 
     const tasks = useSelector(state => state.plans.plans)
     const dispatch = useDispatch();
 
+    const [showModal, setShowModal] = useState(false)
+
+    const toggleModal = () => {
+        setShowModal(!showModal)
+    }
+
+
     useEffect(() => {
         dispatch(operations.fetchPlans())
-    }, [])
+    }, [dispatch])
 
     return (
         <section className={styles.container}>
             <div className={styles.mainInfo}>
-                <p className={styles.week}>Plan for week: <span className={styles.currentWeek}>{`${startOfWeek}  -  ${endOfWeek}`}</span></p>
-                <p>Planned tasks for <span className={styles.score}>50</span> points</p>
-
-                <div className={styles.newTask}>
-                    <p>Want to gain more points - create new task</p>
-                    <Plus className={styles.plus} />
-                </div>
+                <CurrentWeek />
+                <WeekPoints />
+                <Planning toggleModal={toggleModal} showModal={showModal} />
             </div>
             <PlansList tasks={tasks} />
         </section>

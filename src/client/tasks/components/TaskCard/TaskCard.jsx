@@ -7,10 +7,8 @@ import CheckboxToggle from '../../../../shared/components/CheckboxToggle'
 
 import styles from './TaskCard.module.scss'
 
-const TaskCard = ({ title, reward, imageUrl, data, isCompleted, toggleCompleted }) => {
+const TaskCard = ({ title, reward, imageUrl, date, isCompleted, toggleCompleted }) => {
 
-
-    const date = data.map(data => data)
     const today = moment().format('YYYY-MM-DD');
     const expiredDate = today > date;
     const exactDate = today === date;

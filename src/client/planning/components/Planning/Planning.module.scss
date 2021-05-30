@@ -1,0 +1,15 @@
+@import '../../../../shared/styles/base';
+
+.newTask {
+    @include flex(center, center);
+}
+
+.plus {
+    margin-left: 20px;
+}
+
+.btn {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}

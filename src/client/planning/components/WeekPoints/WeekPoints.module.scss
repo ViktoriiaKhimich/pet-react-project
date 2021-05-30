@@ -1,0 +1,15 @@
+@import '../../../../shared/styles/base';
+
+.score {
+    @include flex(center, center);
+    width: 30px;
+    height: 30px;
+    background-color: #8EC63F;
+
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.22;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+}

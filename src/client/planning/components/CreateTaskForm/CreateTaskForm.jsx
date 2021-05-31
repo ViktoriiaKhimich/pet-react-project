@@ -1,5 +1,5 @@
-import React, { useState, useCallback } from 'react'
-import { createPortal } from 'react-dom'
+import React, { useState } from 'react'
+// import { createPortal } from 'react-dom'
 import { useDispatch } from 'react-redux'
 import { initialState } from './initialState'
 import { fields } from './fields'

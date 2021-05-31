@@ -14,9 +14,9 @@ const Planning = ({ toggleModal, showModal }) => {
                     <Plus className={styles.plus} />
                 </button>
             </div>
-            {/* {showModal && <Modal> */}
+
             <CreateTaskForm onClose={toggleModal} />
-            {/* </Modal>} */}
+
         </>
     );
 }

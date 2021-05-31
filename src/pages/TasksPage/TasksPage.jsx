@@ -3,6 +3,7 @@ import { useDispatch, useSelector, shallowEqual } from 'react-redux'
 import selectors from '../../redux/tasks/selectors'
 
 import TasksList from '../../client/tasks/components/TasksList'
+import DaysTabs from '../../client/tasks/components/DaysTabs'
 import { fetchTasks } from '../../redux/tasks/operations'
 
 
@@ -17,7 +18,8 @@ const TasksPage = () => {
 
     return (
         <>
-            <TasksList tasks={tasks} />
+            <DaysTabs />
+            {/* <TasksList tasks={tasks} /> */}
         </>
     );
 }

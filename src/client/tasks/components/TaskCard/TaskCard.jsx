@@ -43,7 +43,7 @@ TaskCard.defaultProps = {
 
 TaskCard.propTypes = {
     title: PropTypes.string,
-    reward: PropTypes.string,
+    reward: PropTypes.number,
     imageUrl: PropTypes.string,
     isCompleted: PropTypes.bool,
     toggleCompleted: PropTypes.func,

@@ -4,7 +4,7 @@ import actions from './actions'
 
 const plans = createReducer([], {
     [actions.fetchTasksToPlanSuccess]: (_, { payload }) => payload.week.tasks,
-    [actions.createNewTaskSuccess]: (_, { payload }) => payload,
+    [actions.createNewTaskSuccess]: (_, { payload }) => payload.week.tasks,
 })
 
 const error = createReducer(false, {

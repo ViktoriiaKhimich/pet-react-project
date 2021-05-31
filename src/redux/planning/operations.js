@@ -17,9 +17,11 @@ export const fetchPlans = () => async dispatch => {
 }
 
 export const createNewTask = (body) => async dispatch => {
+
     dispatch(createNewTaskRequest())
     try {
         const { data } = await axios.post('/task', body)
+        console.log(data);
         dispatch(createNewTaskSuccess(data))
     } catch (error) {
         dispatch(createNewTaskError(error))

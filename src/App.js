@@ -6,6 +6,7 @@ import Header from './client/header/components/Header'
 import ContactsPage from './pages/ContactsPage'
 import AuthorizationPage from './pages/AuthorizationPage'
 import TasksPage from './pages/TasksPage'
+import RewardsPage from './pages/RewardsPage'
 // import HomePage from './pages/HomePage'
 
 
@@ -29,6 +30,7 @@ const App = () => {
         {/* <Route exact path='/' component={HomePage} /> */}
         <Route exact path='/' component={TasksPage} />
         <Route exact path='/planning' component={PlanningPage} />
+        <Route exact path='/rewards' component={RewardsPage} />
       </Switch>
     </>
   );

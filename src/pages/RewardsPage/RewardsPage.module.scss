@@ -1,0 +1,47 @@
+@import '../../shared/styles/base';
+
+.container {
+    padding: 40px 50px 65px 50px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+.rewards {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.22;
+    letter-spacing: 0.2em;
+    margin-left: 15px;
+}
+
+.btn {
+    display: inline-block;
+    width: 220px;
+    height: 48px;
+    background-color: #FFBC33;
+    border: none;
+    border-radius: 6px;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.02em;
+    color: #FAFAFA;
+    margin: 0 auto;
+    margin-top: 60px;
+    cursor: pointer;
+}
+
+

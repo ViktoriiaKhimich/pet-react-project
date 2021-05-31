@@ -9,17 +9,7 @@ import styles from './DaysTabs.module.scss'
 
 const DaysTabs = () => {
 
-    const [activeTask, setActiveTask] = useState([])
-    const tasks = useSelector(state => state.tasks.allTasks, shallowEqual);
-
-    const filteredTasks = tabs.map(tab => {
-        let qwe = [];
-        const array = tasks.map(task => task.days.map(item => item.date === tab.date && item.isActive ? qwe.push(task) : null))
-        console.log(qwe);
-        // setActiveTask(qwe);
-    })
-    // const array = tasks.map(task => task.days.filter(({ isActive }) => isActive))
-    // console.log(array);
+    // const tasks = useSelector(state => state.tasks.allTasks, shallowEqual);
 
     const [activeTab, setActiveTab] = useState(0)
 
@@ -36,8 +26,6 @@ const DaysTabs = () => {
                 <TaskList />
             </div>
         </div>
-
-
     );
 }
 

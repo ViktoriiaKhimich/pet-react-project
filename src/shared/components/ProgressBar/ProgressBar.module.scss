@@ -1,0 +1,69 @@
+@import '../../styles/base';
+
+.progressInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+.progress {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 10px;
+}
+
+.score {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.22;
+    letter-spacing: 0.2em;
+    margin-right: 19px;
+}
+
+progress {
+    border: 0;
+    width: 280px;
+    height: 10px;
+    border-radius: 10px;
+}
+progress::-webkit-progress-bar {
+    border: 0;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #E0E0E0;
+}
+progress::-webkit-progress-value {
+    border: 0;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #9ECB44;
+}
+progress::-moz-progress-bar {
+    border: 0;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #E0E0E0;
+}
+
+.text {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.22;
+    text-align: right;
+    letter-spacing: 0.04em;
+    color: #A6ABB9;
+    margin-bottom: 10px;
+}
+
+.points {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.22;
+    letter-spacing: 0.2em;
+    color: #000000;
+    margin-left: 10px;
+}
+
+
+

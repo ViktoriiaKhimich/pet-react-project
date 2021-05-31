@@ -1,0 +1,7 @@
+@import '../../../../shared/styles/base';
+
+.giftsList {
+    display: grid;
+    @include grid(280px, auto-fit);
+    grid-gap: 20px;
+}

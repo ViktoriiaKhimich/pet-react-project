@@ -2,6 +2,7 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 import actions from './actions';
+import rewardsAction from '../rewards/actions'
 
 const initialState = [{
     email: null,
@@ -42,6 +43,7 @@ const balance = createReducer(0, {
     [actions.registerSuccess]: (_, { payload }) => payload.user.balance,
     [actions.logoutSuccess]: () => 0,
     [actions.getCurrentUserSuccess]: (_, { payload }) => payload.user.balance,
+    [rewardsAction.buyGiftsSuccess]: (_, { payload }) => payload.updatedBalance,
 })
 
 export default combineReducers({

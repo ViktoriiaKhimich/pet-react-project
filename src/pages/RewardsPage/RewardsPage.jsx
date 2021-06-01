@@ -17,6 +17,8 @@ const RewardsPage = () => {
         dispatch(operations.fetchGifts())
     }, [dispatch])
 
+
+
     return (
         <section className={styles.container}>
             <div className={styles.header}>
@@ -29,7 +31,6 @@ const RewardsPage = () => {
                 </div>
             </div>
             <RewardsList gifts={gifts} />
-            <Button type='submit' className={styles.btn}>Confirm</Button>
         </section>
     );
 }

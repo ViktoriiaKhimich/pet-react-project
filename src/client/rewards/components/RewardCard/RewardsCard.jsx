@@ -2,10 +2,9 @@ import React, { useState } from 'react'
 import styles from './RewardCard.module.scss'
 import CheckboxToggle from '../../../../shared/components/CheckboxToggle'
 
-const RewardsCard = ({ title, imageUrl, price, onClick }) => {
+const RewardsCard = ({ title, imageUrl, price, onClick, id }) => {
 
     const [checked, setChecked] = useState(false);
-
 
     return (
         <li className={styles.item}>
@@ -18,7 +17,7 @@ const RewardsCard = ({ title, imageUrl, price, onClick }) => {
                     <p className={styles.score}>{price}</p>
                 </div>
                 <div>
-                    <CheckboxToggle checked={checked} onChange={(e) => { setChecked(e.target.checked) }} />
+                    <CheckboxToggle name='prize' checked={checked} onChange={(e) => { setChecked(e.target.checked); onClick(id, e.target.checked) }} />
                 </div>
             </div>
         </li>

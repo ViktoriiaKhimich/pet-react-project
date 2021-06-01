@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types';
 import moment from 'moment'
 import { ReactComponent as Completed } from '../../icons/completed.svg'
@@ -7,11 +7,14 @@ import CheckboxToggle from '../../../../shared/components/CheckboxToggle'
 
 import styles from './TaskCard.module.scss'
 
-const TaskCard = ({ title, reward, imageUrl, date, isCompleted, toggleCompleted }) => {
+const TaskCard = ({ title, reward, days, imageUrl, isCompleted, toggleCompleted }) => {
+
+    const [completed, setCompleted] = useState(false);
 
     const today = moment().format('YYYY-MM-DD');
-    const expiredDate = today > date;
-    const exactDate = today === date;
+
+    const exactDate = days.map(day => day.date === today && day.isActive ? <CheckboxToggle checked={completed} onChange={(e) => setCompleted(e.target.checked)} onClick={toggleCompleted} /> : false);
+
 
     return (
         <li className={styles.item}>
@@ -24,9 +27,7 @@ const TaskCard = ({ title, reward, imageUrl, date, isCompleted, toggleCompleted 
                     <p className={styles.score}>{reward} балла</p>
                 </div>
                 <div>
-                    {exactDate && <CheckboxToggle />}
-                    {expiredDate && isCompleted && <Completed />}
-                    {expiredDate && !isCompleted && <Incompleted />}
+                    {exactDate}
                 </div>
             </div>
         </li>

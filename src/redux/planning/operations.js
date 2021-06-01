@@ -9,7 +9,6 @@ export const fetchPlans = () => async dispatch => {
     dispatch(fetchTasksToPlanRequest())
     try {
         const { data } = await axios.get('/user/info');
-        console.log(data);
         dispatch(fetchTasksToPlanSuccess(data))
     } catch (error) {
         dispatch(fetchTasksToPlanError(error.message))
@@ -21,7 +20,6 @@ export const createNewTask = (body) => async dispatch => {
     dispatch(createNewTaskRequest())
     try {
         const { data } = await axios.post('/task', body)
-        console.log(data);
         dispatch(createNewTaskSuccess(data))
     } catch (error) {
         dispatch(createNewTaskError(error))

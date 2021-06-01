@@ -6,7 +6,11 @@ export const fetchTasksError = createAction('tasks/fetchTasksError');
 
 export const addTaskToDaysRequest = createAction('tasks/addTaskToDaysRequest');
 export const addTaskToDaysSuccess = createAction('tasks/addTaskToDaysSuccess')
-export const addTaskToDaysError = createAction('tasks/addTaskToDaysError')
+export const addTaskToDaysError = createAction('tasks/addTaskToDaysError');
+
+export const toggleCompletedRequest = createAction('tasks/toggleCompletedRequest');
+export const toggleCompletedSuccess = createAction('tasks/toggleCompletedSuccess');
+export const toggleCompletedError = createAction('tasks/toggleCompletedError');
 
 export default {
     fetchTasksRequest,
@@ -14,5 +18,8 @@ export default {
     fetchTasksError,
     addTaskToDaysRequest,
     addTaskToDaysSuccess,
-    addTaskToDaysError
+    addTaskToDaysError,
+    toggleCompletedRequest,
+    toggleCompletedSuccess,
+    toggleCompletedError
 }

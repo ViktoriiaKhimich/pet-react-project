@@ -13,7 +13,6 @@ import styles from './PlanningPage.module.scss'
 const PlanningPage = () => {
 
     const tasks = useSelector(state => state.plans.plans);
-    console.log(tasks);
     const dispatch = useDispatch();
 
     const [showModal, setShowModal] = useState(false)
@@ -21,7 +20,6 @@ const PlanningPage = () => {
     const toggleModal = () => {
         setShowModal(!showModal)
     }
-
 
     useEffect(() => {
         dispatch(operations.fetchPlans())

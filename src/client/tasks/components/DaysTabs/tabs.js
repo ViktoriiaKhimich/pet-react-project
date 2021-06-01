@@ -1,9 +1,5 @@
-import moment from 'moment';
 import { v4 } from 'uuid';
-import TaskList from '../../../tasks/components/TasksList'
 import { dates } from './days'
-
-// export const days = dates.map(item => { return { [moment(item).format('dddd')]: item } });
 
 export const tabs = [
     {

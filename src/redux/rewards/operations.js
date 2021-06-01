@@ -13,6 +13,18 @@ export const fetchGifts = () => async dispatch => {
     }
 }
 
+export const buyGifts = (body) => async dispatch => {
+    dispatch(actions.buyGiftsRequest())
+    try {
+        const { data } = await axios.patch('/gift', body)
+        console.log(data);
+        dispatch(actions.buyGiftsSuccess(data))
+    } catch (error) {
+        dispatch(actions.fetchGiftsError(error))
+    }
+}
+
 export default {
-    fetchGifts
+    fetchGifts,
+    buyGifts,
 }

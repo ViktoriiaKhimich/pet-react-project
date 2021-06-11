@@ -7,14 +7,15 @@ import CheckboxToggle from '../../../../shared/components/CheckboxToggle'
 
 import styles from './TaskCard.module.scss'
 
-const TaskCard = ({ title, reward, days, imageUrl, isCompleted, toggleCompleted }) => {
-
-    const [completed, setCompleted] = useState(false);
-
+const TaskCard = ({ title, reward, days, imageUrl, toggleCompleted, active }) => {
     const today = moment().format('YYYY-MM-DD');
 
-    const exactDate = days.map(day => day.date === today && day.isActive ? <CheckboxToggle checked={completed} onChange={(e) => setCompleted(e.target.checked)} onClick={toggleCompleted} /> : false);
+    const completedTask = days[active].isCompleted;
+    const date = days[active].date;
+    const exactDate = today === date;
+    const expiredDate = date < today;
 
+    const [completed, setCompleted] = useState(completedTask);
 
     return (
         <li className={styles.item}>
@@ -27,7 +28,10 @@ const TaskCard = ({ title, reward, days, imageUrl, isCompleted, toggleCompleted 
                     <p className={styles.score}>{reward} балла</p>
                 </div>
                 <div>
-                    {exactDate}
+                    {exactDate &&
+                        <CheckboxToggle checked={completed} onChange={(e) => setCompleted(e.target.checked)} onClick={toggleCompleted} />}
+                    {expiredDate && completed && <Completed />}
+                    {expiredDate && !completed && <Incompleted />}
                 </div>
             </div>
         </li>

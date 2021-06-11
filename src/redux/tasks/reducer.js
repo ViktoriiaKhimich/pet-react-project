@@ -9,6 +9,14 @@ const allTasks = createReducer([], {
     [actions.addTaskToDaysSuccess]: (_, { payload }) => payload,
 })
 
+// const rewardsGainded = createReducer(0, {
+//     [actions.buyGiftsSuccess]: (_, { payload }) => payload.week.rewardsGained,
+// })
+
+// const rewardsPlanned = createReducer(0, {
+//     [actions.buyGiftsSuccess]: (_, { payload }) => payload.week.rewardsPlanned,
+// })
+
 const updateTasks = createReducer({}, {
     [actions.toggleCompletedSuccess]: (_, { payload }) => payload.updatedTask,
 })

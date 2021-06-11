@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { shallowEqual, useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { ReactComponent as Logout } from './vector.svg'
 import MainNav from '../MainNav'
@@ -9,7 +9,7 @@ import styles from './UserMenu.module.scss'
 
 const UserMenu = () => {
     const email = useSelector(state => state.auth.userEmail);
-    const balance = useSelector(state => state.auth.balance)
+    const balance = useSelector(state => state.auth.balance, shallowEqual)
     const dispatch = useDispatch();
 
     return (

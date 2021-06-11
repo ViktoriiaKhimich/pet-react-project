@@ -1,15 +1,12 @@
 import React, { useEffect } from 'react'
-import { useDispatch, useSelector, shallowEqual } from 'react-redux'
-import selectors from '../../redux/tasks/selectors'
-
-import TasksList from '../../client/tasks/components/TasksList'
+import { useDispatch } from 'react-redux'
 import DaysTabs from '../../client/tasks/components/DaysTabs'
 import { fetchTasks } from '../../redux/tasks/operations'
 
+import styles from './TasksPage.module.scss'
+
 
 const TasksPage = () => {
-
-    const tasks = useSelector(state => state.tasks.allTasks, shallowEqual);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -17,10 +14,9 @@ const TasksPage = () => {
     }, [dispatch])
 
     return (
-        <>
-            <DaysTabs />
-            {/* <TasksList tasks={tasks} /> */}
-        </>
+
+        <DaysTabs />
+
     );
 }
 

@@ -7,8 +7,7 @@ import TaskCard from '../TaskCard'
 
 import styles from './TasksList.module.scss'
 
-const TasksList = ({ tasks, dates }) => {
-
+const TasksList = ({ tasks, active }) => {
 
     const dispatch = useDispatch()
 
@@ -16,13 +15,12 @@ const TasksList = ({ tasks, dates }) => {
         dispatch(toggleCompleted(id, { date: moment().format('YYYY-MM-DD') }))
     }
 
-    const tasksElements = tasks.map(({ _id, ...props }) => <TaskCard key={_id} {...props} toggleCompleted={() => toggleCheckbox(_id)}></TaskCard>)
+    const tasksElements = tasks.map(({ id, _id, ...props }) => <TaskCard key={id ? id : _id} {...props} active={active} toggleCompleted={() => toggleCheckbox(_id)}></TaskCard>)
 
     return (
         <ul className={styles.list}>{tasksElements}</ul>
     )
 }
-
 
 TasksList.defaultProps = {
     tasks: [],

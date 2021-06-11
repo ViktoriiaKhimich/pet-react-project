@@ -28,7 +28,7 @@ const PlanningPage = () => {
     return (
         <section className={styles.container}>
             <div className={styles.mainInfo}>
-                <CurrentWeek />
+                <CurrentWeek>Plan for week</CurrentWeek>
                 <WeekPoints />
                 <Planning toggleModal={toggleModal} showModal={showModal} />
             </div>

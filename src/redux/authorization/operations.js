@@ -3,31 +3,7 @@ import axios from 'axios';
 // import BaseHttpService from '../../shared/services/base-http-service'
 import { loginRequest, loginSuccess, loginError, registerRequest, registerSuccess, registerError, logoutRequest, logoutSuccess, logoutError, getCurrentUserRequest, getCurrentUserSuccess, getCurrentUserError } from './actions';
 
-// const service = new AuthHttpService();
 axios.defaults.baseURL = 'https://kidslike-v1-backend.goit.global';
-
-// const register = body => async dispatch => {
-//     dispatch(registerRequest())
-//     try {
-//         const data = await service.register(body);
-//         console.log(data);
-//         dispatch(registerSuccess(data))
-//     } catch (error) {
-//         dispatch(registerError(error.message))
-//     }
-// }
-
-// const login = body => async dispatch => {
-//     dispatch(loginRequest())
-//     try {
-//         const data = await service.login(body);
-//         dispatch(loginSuccess(data))
-//     } catch (error) {
-//         dispatch(loginError(error.message))
-//     }
-// }
-
-
 
 const token = {
     set(token) {
@@ -104,6 +80,10 @@ export const getCurrentUser = () => async dispatch => {
     catch (error) {
         dispatch(getCurrentUserError(error))
     }
+}
+
+export const getProgress = () => async dispatch => {
+
 }
 
 export default { register, login, logout, getCurrentUser }

@@ -9,7 +9,11 @@ import styles from './UserMenu.module.scss'
 
 const UserMenu = () => {
     const email = useSelector(state => state.auth.userEmail);
-    const balance = useSelector(state => state.auth.balance, shallowEqual)
+    let balance = useSelector(state => state.auth.balance, shallowEqual)
+    const updatedBalance = useSelector(state => state.tasks.updatedBalance, shallowEqual);
+    if (updatedBalance) {
+        balance = updatedBalance
+    }
     const dispatch = useDispatch();
 
     return (

@@ -12,6 +12,10 @@ export const toggleCompletedRequest = createAction('tasks/toggleCompletedRequest
 export const toggleCompletedSuccess = createAction('tasks/toggleCompletedSuccess');
 export const toggleCompletedError = createAction('tasks/toggleCompletedError');
 
+export const createNewTaskRequest = createAction('plans/createNewTaskRequest');
+export const createNewTaskSuccess = createAction('plans/createNewTaskSuccess')
+export const createNewTaskError = createAction('plans/createNewTaskError')
+
 export default {
     fetchTasksRequest,
     fetchTasksSuccess,
@@ -21,5 +25,8 @@ export default {
     addTaskToDaysError,
     toggleCompletedRequest,
     toggleCompletedSuccess,
-    toggleCompletedError
+    toggleCompletedError,
+    createNewTaskRequest,
+    createNewTaskSuccess,
+    createNewTaskError
 }

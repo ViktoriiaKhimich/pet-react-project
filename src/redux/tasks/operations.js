@@ -1,5 +1,5 @@
 import axios from 'axios';
-import actions, { fetchTasksRequest, fetchTasksSuccess, fetchTasksError, addTaskToDaysRequest, addTaskToDaysSuccess, addTaskToDaysError, toggleCompletedRequest, toggleCompletedSuccess, toggleCompletedError } from './actions';
+import actions, { fetchTasksRequest, fetchTasksSuccess, fetchTasksError, addTaskToDaysRequest, addTaskToDaysSuccess, addTaskToDaysError, toggleCompletedRequest, toggleCompletedSuccess, toggleCompletedError, createNewTaskRequest, createNewTaskSuccess, createNewTaskError } from './actions';
 
 axios.defaults.baseURL = 'https://kidslike-v1-backend.goit.global';
 
@@ -34,5 +34,16 @@ export const toggleCompleted = (taskId, body) => async dispatch => {
     }
 }
 
-export default { fetchTasks, addTaskToProvidedDays, toggleCompleted };
+export const createNewTask = (body) => async dispatch => {
+
+    dispatch(createNewTaskRequest())
+    try {
+        const { data } = await axios.post('/task', body)
+        dispatch(createNewTaskSuccess(data))
+    } catch (error) {
+        dispatch(createNewTaskError(error))
+    }
+}
+
+export default { fetchTasks, addTaskToProvidedDays, toggleCompleted, createNewTask };
 

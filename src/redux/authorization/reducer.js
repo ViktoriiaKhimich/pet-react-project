@@ -43,9 +43,21 @@ const balance = createReducer(0, {
     [actions.registerSuccess]: (_, { payload }) => payload.user.balance,
     [actions.logoutSuccess]: () => 0,
     [actions.getCurrentUserSuccess]: (_, { payload }) => payload.user.balance,
-    [rewardsAction.buyGiftsSuccess]: (_, { payload }) => payload.updatedBalance,
+})
+
+const rewardsGained = createReducer(0, {
+    [actions.loginSuccess]: (_, { payload }) => payload.week.rewardsGained,
+    [actions.registerSuccess]: (_, { payload }) => payload.week.rewardsGained,
+    [actions.getCurrentUserSuccess]: (_, { payload }) => payload.week.rewardsGained,
+})
+
+const rewardsPlanned = createReducer(0, {
+    [actions.loginSuccess]: (_, { payload }) => payload.week.rewardsPlanned,
+    [actions.registerSuccess]: (_, { payload }) => payload.week.rewardsPlanned,
+    [actions.getCurrentUserSuccess]: (_, { payload }) => payload.week.rewardsPlanned,
 })
 
 export default combineReducers({
-    userEmail, token, error, isLogined, balance,
+    userEmail, token, error, isLogined, balance, rewardsGained, rewardsPlanned
+
 })

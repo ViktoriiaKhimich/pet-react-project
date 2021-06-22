@@ -15,17 +15,7 @@ export const fetchPlans = () => async dispatch => {
     }
 }
 
-export const createNewTask = (body) => async dispatch => {
-
-    dispatch(createNewTaskRequest())
-    try {
-        const { data } = await axios.post('/task', body)
-        dispatch(createNewTaskSuccess(data))
-    } catch (error) {
-        dispatch(createNewTaskError(error))
-    }
-}
 
 export default {
-    fetchPlans, createNewTask,
+    fetchPlans,
 }

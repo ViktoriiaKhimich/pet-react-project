@@ -6,19 +6,17 @@ const allTasks = createReducer([], {
     // [actions.loginSuccess]: (_, { payload }) => payload.week.tasks,
     // [actions.registerSuccess]: (_, { payload }) => payload.week.tasks,
     [actions.fetchTasksSuccess]: (_, { payload }) => payload.week.tasks,
-    [actions.addTaskToDaysSuccess]: (_, { payload }) => payload,
+    [actions.addTaskToDaysSuccess]: (state, { payload }) => [...state, payload],
+    [actions.toggleCompletedSuccess]: (state, { payload }) => [...state, payload.updatedTask],
+    [actions.createNewTaskSuccess]: (state, { payload: { id, title, days, imageUrl, reward } }) => [...state, { id, title, days, imageUrl, reward }],
 })
 
-// const rewardsGainded = createReducer(0, {
-//     [actions.buyGiftsSuccess]: (_, { payload }) => payload.week.rewardsGained,
-// })
+const updatedBalance = createReducer(0, {
+    [actions.toggleCompletedSuccess]: (_, { payload }) => payload.updatedBalance,
+})
 
-// const rewardsPlanned = createReducer(0, {
-//     [actions.buyGiftsSuccess]: (_, { payload }) => payload.week.rewardsPlanned,
-// })
-
-const updateTasks = createReducer({}, {
-    [actions.toggleCompletedSuccess]: (_, { payload }) => payload.updatedTask,
+const updatedWeekGainedRewards = createReducer(0, {
+    [actions.toggleCompletedSuccess]: (_, { payload }) => payload.updatedWeekGainedRewards,
 })
 
 const error = createReducer(null, {
@@ -43,5 +41,6 @@ export default combineReducers({
     allTasks,
     error,
     loading,
-    updateTasks,
+    updatedBalance,
+    updatedWeekGainedRewards
 })

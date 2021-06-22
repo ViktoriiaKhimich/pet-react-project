@@ -14,17 +14,11 @@ const DaysTabs = () => {
     const [activeTab, setActiveTab] = useState(0)
 
     const tasks = useSelector(state => state.tasks.allTasks, shallowEqual);
-    const updatedTask = useSelector(state => state.tasks.updateTasks, shallowEqual)
 
     const filterTask = (idx) => {
         const arr = tasks.map(task => { return task.days[idx].isActive ? task : null }).filter(item => item !== null)
         return arr;
     }
-
-    let arr = filterTask(activeTab)
-
-    const qwe = arr.filter(item => item._id !== updatedTask.id)
-    qwe.push(updatedTask)
 
     const weekDays = tabs.map(({ id, day, date }, idx) => {
         return <li key={id} onClick={() => setActiveTab(idx)} className={activeTab === idx ? `${styles.tabListItem} ${styles.tabListActive}` : `${styles.tabListItem}`}>{day}</li>
@@ -54,7 +48,7 @@ const DaysTabs = () => {
                     <ProgressBar />
                 </div>
                 <div className={styles.tasks}>
-                    {arr.length > 0 ? < TasksList tasks={arr} dates={dates} active={activeTab} /> : <NoTasks />}
+                    {filterTask(activeTab).length ? < TasksList tasks={filterTask(activeTab)} dates={dates} active={activeTab} /> : <NoTasks />}
                 </div>
             </div>
         </section>

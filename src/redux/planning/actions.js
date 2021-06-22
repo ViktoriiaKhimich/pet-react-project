@@ -14,5 +14,5 @@ export default {
     fetchTasksToPlanError,
     createNewTaskRequest,
     createNewTaskSuccess,
-    createNewTaskError,
+    createNewTaskError
 }

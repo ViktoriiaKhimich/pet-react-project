@@ -1,12 +1,12 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, shallowEqual } from 'react-redux'
 import styles from './WeekPoints.module.scss'
 
 const WeekPoints = () => {
-    const score = useSelector(state => state.tasks.allTasks.updatedWeekPlannedRewards);
+    const plannedPoints = useSelector(state => state.auth.rewardsPlanned, shallowEqual);
 
     return (
-        <p>Planned tasks for <span className={styles.score}>{score ? score : 0}</span> points</p>
+        <p>Planned tasks for <span className={styles.score}>{plannedPoints ? plannedPoints : 0}</span> points</p>
     );
 }
 

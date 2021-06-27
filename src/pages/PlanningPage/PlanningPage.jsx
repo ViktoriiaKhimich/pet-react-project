@@ -7,8 +7,10 @@ import CreateTaskForm from '../../client/planning/components/CreateTaskForm'
 import CurrentWeek from '../../client/planning/components/CurrentWeek'
 import WeekPoints from '../../client/planning/components/WeekPoints'
 import Planning from '../../client/planning/components/Planning'
+import Modal from '../../shared/components/Modal'
 
 import styles from './PlanningPage.module.scss'
+import { toggleCompleted } from '../../redux/tasks/operations'
 
 const PlanningPage = () => {
 
@@ -30,10 +32,12 @@ const PlanningPage = () => {
             <div className={styles.mainInfo}>
                 <CurrentWeek>Plan for week</CurrentWeek>
                 <WeekPoints />
-                <Planning toggleModal={toggleModal} showModal={showModal} />
+                <Planning toggleModal={toggleModal} />
             </div>
             <PlansList tasks={tasks} />
+            {showModal && <Modal onClose={toggleModal}><CreateTaskForm onClose={toggleModal} /></Modal>}
         </section>
+
     );
 }
 

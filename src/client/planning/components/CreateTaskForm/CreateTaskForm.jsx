@@ -33,7 +33,8 @@ const CreateTaskFrom = ({ onClose }) => {
 
     return (
         <form onSubmit={handleSubmit} className={styles.form}>
-            <img src={image} alt="" />
+            <Button className={styles.closeBtn} onClick={onClose}>х</Button>
+            <img src={image} alt="" style={{ marginBottom: 24 }} />
             <div className={styles.input}>
                 <Pen />
                 <Input value={data.title} {...fields.title} onChange={handleChange} className={styles.field} />
@@ -42,7 +43,7 @@ const CreateTaskFrom = ({ onClose }) => {
                 <Pen />
                 <Input value={data.reward} {...fields.reward} onChange={handleChange} className={styles.field} />
             </div>
-            <Button type='submit' className={styles.btn} onClick={onClose}>Ok</Button>
+            <Button type='submit' className={styles.btn}>Ok</Button>
         </form>
     )
 }

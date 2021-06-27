@@ -1,14 +1,21 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector, shallowEqual } from 'react-redux'
 import { ReactComponent as Giftbox } from './giftbox.svg'
 import ProgressBar from '../../shared/components/ProgressBar'
 import RewardsList from '../../client/rewards/components/RewardsList'
-import Button from '../../shared/components/Button'
 import operations from '../../redux/rewards/operations'
+import Modal from '../../shared/components/Modal'
+import RewardsModalContent from '../../client/rewards/components/RewardsModalContent/RewardsModalContent'
 
 import styles from './RewardsPage.module.scss'
 
 const RewardsPage = () => {
+
+    const [showModal, setShowModal] = useState(false);
+
+    const toggleModal = () => {
+        setShowModal(!showModal)
+    }
 
     const gifts = useSelector(state => state.gifts.gifts, shallowEqual);
     const dispatch = useDispatch()
@@ -16,8 +23,6 @@ const RewardsPage = () => {
     useEffect(() => {
         dispatch(operations.fetchGifts())
     }, [dispatch])
-
-
 
     return (
         <section className={styles.container}>
@@ -30,7 +35,8 @@ const RewardsPage = () => {
                     <ProgressBar />
                 </div>
             </div>
-            <RewardsList gifts={gifts} />
+            <RewardsList gifts={gifts} toggleModal={toggleModal} />
+            {showModal && <Modal onClose={toggleModal}><RewardsModalContent /></Modal>}
         </section>
     );
 }

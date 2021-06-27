@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { ReactComponent as Plus } from './plus.svg'
-import CreateTaskForm from '../CreateTaskForm'
-import Modal from '../../../../shared/components/Modal'
 import styles from './Planning.module.scss'
 
-const Planning = ({ toggleModal, showModal }) => {
+const Planning = ({ toggleModal }) => {
 
     return (
         <>
@@ -14,9 +12,6 @@ const Planning = ({ toggleModal, showModal }) => {
                     <Plus className={styles.plus} />
                 </button>
             </div>
-
-            <CreateTaskForm onClose={toggleModal} />
-
         </>
     );
 }

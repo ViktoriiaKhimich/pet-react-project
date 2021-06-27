@@ -3,11 +3,9 @@ import { createReducer } from '@reduxjs/toolkit';
 import actions from './actions'
 
 const allTasks = createReducer([], {
-    // [actions.loginSuccess]: (_, { payload }) => payload.week.tasks,
-    // [actions.registerSuccess]: (_, { payload }) => payload.week.tasks,
     [actions.fetchTasksSuccess]: (_, { payload }) => payload.week.tasks,
-    [actions.addTaskToDaysSuccess]: (state, { payload }) => [...state, payload],
-    [actions.toggleCompletedSuccess]: (state, { payload }) => [...state, payload.updatedTask],
+    [actions.addTaskToDaysSuccess]: (state, { payload }) => [...state, payload.updatedTask],
+    [actions.toggleCompletedSuccess]: (_, { payload }) => payload.updatedTask,
     [actions.createNewTaskSuccess]: (state, { payload: { id, title, days, imageUrl, reward } }) => [...state, { id, title, days, imageUrl, reward }],
 })
 

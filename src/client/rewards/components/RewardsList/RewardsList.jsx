@@ -6,20 +6,20 @@ import { buyGifts } from '../../../../redux/rewards/operations'
 
 import styles from './RewardsList.module.scss'
 
-const RewardsList = ({ gifts }) => {
+const RewardsList = ({ gifts, toggleModal }) => {
 
     const [idsArr, setIdsArr] = useState([]);
     const dispatch = useDispatch()
 
     const handleChange = (id, checked) => {
-        let qwe = [...idsArr]
+        let ids = [...idsArr]
         if (checked) {
-            qwe.push(id);
-            setIdsArr(qwe)
+            ids.push(id);
+            setIdsArr(ids)
         } else {
-            const idx = qwe.indexOf(id)
-            qwe.splice(idx, 1)
-            setIdsArr(qwe)
+            const idx = ids.indexOf(id)
+            ids.splice(idx, 1)
+            setIdsArr(ids)
         }
     }
 
@@ -28,6 +28,7 @@ const RewardsList = ({ gifts }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(buyGifts(body))
+        toggleModal()
     }
 
     const giftsElements = gifts.map(({ id, ...props }) => <RewardsCard key={id} {...props} id={id} onClick={handleChange} />)

@@ -17,10 +17,9 @@ export const buyGifts = (body) => async dispatch => {
     dispatch(actions.buyGiftsRequest())
     try {
         const { data } = await axios.patch('/gift', body)
-        console.log(data);
         dispatch(actions.buyGiftsSuccess(data))
     } catch (error) {
-        dispatch(actions.fetchGiftsError(error))
+        dispatch(actions.buyGiftsError(error))
     }
 }
 

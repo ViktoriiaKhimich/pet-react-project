@@ -1,4 +1,4 @@
-@import '../../../../shared//styles/base.scss';
+@import '../../../../shared/styles/base';
 
 .header {
     @include flex(space-between,center);

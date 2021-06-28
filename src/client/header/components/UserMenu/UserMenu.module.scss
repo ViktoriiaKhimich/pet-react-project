@@ -1,4 +1,19 @@
 @import '../../../../shared/styles/base';
+@import '../../../../shared/styles/common';
+
+
+@include mobile() {
+    .mainNav {
+        display: none;
+    }
+}
+
+@include tablet() {
+    .mainNav {
+        display: block;
+    }
+}
+
 
 .score {
     @include flex(center, center);

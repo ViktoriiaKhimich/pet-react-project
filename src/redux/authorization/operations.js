@@ -60,7 +60,7 @@ export const logout = () => async dispatch => {
         dispatch(logoutSuccess())
     }
     catch (error) {
-        dispatch(logoutError(error))
+        dispatch(logoutError(error.message))
     }
 }
 
@@ -82,8 +82,5 @@ export const getCurrentUser = () => async dispatch => {
     }
 }
 
-export const getProgress = () => async dispatch => {
-
-}
 
 export default { register, login, logout, getCurrentUser }

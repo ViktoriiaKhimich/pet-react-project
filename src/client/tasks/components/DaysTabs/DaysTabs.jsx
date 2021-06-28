@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector, shallowEqual } from 'react-redux'
 import { tabs } from './tabs'
-
+import moment from 'moment'
 import TasksList from '../TasksList'
 import NoTasks from '../NoTasks'
 import CurrentWeek from '../../../planning/components/CurrentWeek'
@@ -11,7 +11,11 @@ import styles from './DaysTabs.module.scss'
 
 const DaysTabs = () => {
 
-    const [activeTab, setActiveTab] = useState(0)
+    const today = moment().format('YYYY-MM-DD');
+    const dates = tabs.map(tab => tab.date);
+    const currentDate = dates.findIndex(item => item === today)
+
+    const [activeTab, setActiveTab] = useState(currentDate)
 
     const tasks = useSelector(state => state.tasks.allTasks, shallowEqual);
 
@@ -23,8 +27,6 @@ const DaysTabs = () => {
     const weekDays = tabs.map(({ id, day }, idx) => {
         return <li key={id} onClick={() => setActiveTab(idx)} className={activeTab === idx ? `${styles.tabListItem} ${styles.tabListActive}` : `${styles.tabListItem}`}>{day}</li>
     })
-
-    const dates = tabs.map(tab => tab.date);
 
     const currentDay = (array, idx) => {
         const day = array[idx].day

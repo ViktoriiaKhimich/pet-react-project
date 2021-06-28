@@ -1,22 +1,33 @@
 @import '../../../../shared/styles/base';
+@import '../../../../shared/styles/common';
 
 .form {
-    width: 420px;
-    max-height: 480px;
-    background-color: $header-bg-color;
-    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 6px;
-    padding: 40px;
+        max-width: 320px;
+        max-height: 600px;
+        padding: 20px;
+        background-color: $header-bg-color;
+        box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+
+    @include tablet() {
+        width: 420px;
+        max-height: 480px;
+        padding: 40px;
+    }
 
     &Input {
         display: inline-block;
-        width: 320px;
+        width: 280px;
         max-height: 42px;
         background-color: #F6F7FB;
         box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.15);
         border: none;
         margin-bottom: 23px;
         padding: 12px 10px;
+
+        @include tablet() {
+            width: 320px;
+        }
     }
 
     &Text {
@@ -26,6 +37,7 @@
         letter-spacing: 0.04em;
         color: $primary-text-color;
         margin-bottom: 20px;
+        text-align: center;
     }
 
     &Label {
@@ -42,17 +54,23 @@
 .authButton {
     color: $white-text-color;
     background-color: $accent-bg-color;
-    width: 155px;
+    width: 120px;
     height: 48px;
     border: none;
-    margin-right: 12px;
     border-radius: 6px;
 
-  
     font-weight: 600;
     font-size: 14px;
     line-height: 1.33;
     letter-spacing: 0.02em;
+
+    &:not(:last-child){
+        margin-right: 12px;
+    }
+
+    @include tablet() {
+        width: 155px;
+    }
 }
 
 .googleButton {

@@ -1,4 +1,17 @@
 @import '../../../../shared/styles/base';
+@import '../../../../shared/styles/common';
+
+@include mobile() {
+    .authNav {
+        display: none;
+    }
+}
+
+@include tablet() {
+    .authNav {
+        display: block;
+    }
+}
 
 .authLink {
     font-weight: 500;

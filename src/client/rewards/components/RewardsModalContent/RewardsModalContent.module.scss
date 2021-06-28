@@ -1,2 +1,67 @@
 @import '../../../../shared/styles/base';
 
+.modalContent {
+    position: relative;
+    width: 602px;
+    min-height: 390px;
+    background: #FFFFFF;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    padding: 60px;
+}
+
+.mainTitle {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 1.23;
+    text-align: center;
+    margin-bottom: 37px;
+}
+
+.giftsList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: -25px;
+    margin-bottom: -25px;
+}
+
+.giftsListItem {
+    margin-left: 25px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.giftsListImg {
+    width: 100px;
+    height: 100px;
+    border: 5px solid #FFBC33;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.giftListName {
+    display: inline-block;
+    width: 90px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1.23;
+    text-align: center;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.closeBtn {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 20px;
+    right: 30px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}

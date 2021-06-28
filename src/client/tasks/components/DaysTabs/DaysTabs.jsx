@@ -20,7 +20,7 @@ const DaysTabs = () => {
         return arr;
     }
 
-    const weekDays = tabs.map(({ id, day, date }, idx) => {
+    const weekDays = tabs.map(({ id, day }, idx) => {
         return <li key={id} onClick={() => setActiveTab(idx)} className={activeTab === idx ? `${styles.tabListItem} ${styles.tabListActive}` : `${styles.tabListItem}`}>{day}</li>
     })
 

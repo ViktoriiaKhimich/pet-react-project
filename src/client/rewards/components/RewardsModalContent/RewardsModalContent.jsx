@@ -1,27 +1,32 @@
 import React from 'react'
 import { useSelector, shallowEqual } from 'react-redux';
+import Button from '../../../../shared/components/Button'
+import { ReactComponent as CloseSvg } from './close.svg'
+import styles from './RewardsModalContent.module.scss'
 
-const RewardsModalContent = () => {
+const RewardsModalContent = ({ onClose }) => {
 
-    const gifts = useSelector(state => state.gifts.gifts, shallowEqual);
-
-    // Массив обьектов [{},{},{}]
-    // id: 1
-    // imageUrl: "https://storage.googleapis.com/kidslikev2_bucket/Rectangle%2025%20(8).png"
-    // isSelected: false
-    // price: 40
-    // title: "Сладости"
-
+    const giftsFromState = useSelector(state => state.gifts.gifts, shallowEqual);
     const giftsIds = useSelector(state => state.gifts.giftIds, shallowEqual);
-
-    // Массив айди 
-    // [1,4]
-
-
+    const gifts = giftsFromState.map(item => giftsIds.includes(item.id) ? item : null).filter(item => item !== null)
 
     return (
         <>
-            <h2>Congratulations! You get:</h2>
+            <div className={styles.modalContent}>
+                <Button className={styles.closeBtn} onClick={onClose}><CloseSvg /></Button>
+                <h2 className={styles.mainTitle}>Congratulations! You get</h2>
+                <ul className={styles.giftsList}>
+                    {gifts.map((item) => {
+                        return (
+                            <li className={styles.giftsListItem}>
+                                <img src={item.imageUrl} alt={item.title} className={styles.giftsListImg} />
+                                <p className={styles.giftListName}>{item.title}</p>
+                            </li>
+                        )
+                    }
+                    )}
+                </ul>
+            </div>
         </>
     );
 }

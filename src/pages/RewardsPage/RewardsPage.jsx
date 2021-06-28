@@ -36,7 +36,7 @@ const RewardsPage = () => {
                 </div>
             </div>
             <RewardsList gifts={gifts} toggleModal={toggleModal} />
-            {showModal && <Modal onClose={toggleModal}><RewardsModalContent /></Modal>}
+            {showModal && <Modal onClose={toggleModal}><RewardsModalContent onClose={toggleModal} /></Modal>}
         </section>
     );
 }

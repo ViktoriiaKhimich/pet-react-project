@@ -5,7 +5,12 @@ import styles from './ProgressBar.module.scss'
 
 const ProgressBar = () => {
 
-    const plannedPoints = useSelector(state => state.auth.rewardsPlanned, shallowEqual);
+    let plannedPoints = useSelector(state => state.auth.rewardsPlanned, shallowEqual);
+    const updatedWeekPlannedRewards = useSelector(state => state.tasks.updatedWeekPlannedRewards, shallowEqual)
+    if (updatedWeekPlannedRewards) {
+        plannedPoints = updatedWeekPlannedRewards
+    }
+
     let gainedPoints = useSelector(state => state.auth.rewardsGained, shallowEqual);
     const updatedWeekGainedRewards = useSelector(state => state.tasks.updatedWeekGainedRewards, shallowEqual);
     if (updatedWeekGainedRewards) {

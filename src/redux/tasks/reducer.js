@@ -5,7 +5,12 @@ import actions from './actions'
 const allTasks = createReducer([], {
     [actions.fetchTasksSuccess]: (_, { payload }) => payload.week.tasks,
     [actions.addTaskToDaysSuccess]: (state, { payload }) => [...state, payload.updatedTask],
-    [actions.toggleCompletedSuccess]: (_, { payload }) => payload.updatedTask,
+    [actions.toggleCompletedSuccess]: (state, { payload }) => {
+        const index = state.findIndex((item) => item.id === payload.updatedTask.id)
+        if (index !== -1) {
+            state[index] = payload.updatedTask
+        }
+    },
     [actions.createNewTaskSuccess]: (state, { payload: { id, title, days, imageUrl, reward } }) => [...state, { id, title, days, imageUrl, reward }],
 })
 
@@ -16,6 +21,11 @@ const updatedBalance = createReducer(0, {
 const updatedWeekGainedRewards = createReducer(0, {
     [actions.toggleCompletedSuccess]: (_, { payload }) => payload.updatedWeekGainedRewards,
 })
+
+const updatedWeekPlannedRewards = createReducer(0, {
+    [actions.addTaskToDaysSuccess]: (_, { payload }) => payload.updatedWeekPlannedRewards,
+})
+
 
 const error = createReducer(null, {
     [actions.fetchTasksError]: (_, { payload }) => payload,
@@ -40,5 +50,6 @@ export default combineReducers({
     error,
     loading,
     updatedBalance,
-    updatedWeekGainedRewards
+    updatedWeekGainedRewards,
+    updatedWeekPlannedRewards
 })
